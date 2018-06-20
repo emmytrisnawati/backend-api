@@ -30,7 +30,7 @@ app.post('/login', (req, res) =>{
     }
 })
 
-app.get('/myprofile', (req, res) =>{
+app.get('/profilsaya', (req, res) =>{
     var token = req.headers['authorization']
     jwt.verify(token, secretkey, function(err, decoded) {
         if (decoded == undefined) {
@@ -42,6 +42,10 @@ app.get('/myprofile', (req, res) =>{
 })
 
 app.post('/user', (req, res) => {
+    let body = req.body //baca payload
+    res.json(body)
+})
+app.post('/account', (req, res) => {
     let body = req.body //baca payload
     res.json(body)
 })
